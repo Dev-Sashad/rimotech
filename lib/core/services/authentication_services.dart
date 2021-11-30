@@ -16,8 +16,8 @@ class AuthenticationService {
         return ErrorModel(result.error);
       } else {
         print("RESULT::: ${result.data}");
-        SharedPreferences prefs;
-        prefs = await SharedPreferences.getInstance();
+        // SharedPreferences prefs;
+        // prefs = await SharedPreferences.getInstance();
         showToast('Successfully logged in');
         // await prefs.setString('password', payload.password);
         // await prefs.setString('id', _currentUser.id.toString());

@@ -42,16 +42,16 @@ class CustomTextFormField extends StatelessWidget {
           const TextStyle(fontSize: 12, color: AppColors.black),
       this.textAlign = TextAlign.start,
       this.hintTextStyle,
-      this.borderStyle = BorderStyle.none,
-      this.borderRadius = 8,
+      this.borderStyle = BorderStyle.solid,
+      this.borderRadius = 10,
       this.borderWidth = 1.5,
       this.contentPaddingHorizontal = 5,
       this.contentPaddingVertical = 0,
       this.hintText,
       this.labelTextStyle,
-      this.borderColor = AppColors.primaryColor,
-      this.focusedBorderColor = AppColors.primaryColor,
-      this.enabledBorderColor = AppColors.primaryColor,
+      this.borderColor = AppColors.grey,
+      this.focusedBorderColor = AppColors.grey,
+      this.enabledBorderColor = AppColors.grey,
       this.fillColor = AppColors.white,
       this.filled = true,
       this.hasPrefixIcon = false,
@@ -74,10 +74,6 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
-      width: kwidth(80, context),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.grey[400])),
       child: TextFormField(
         readOnly: readOnly ?? false,
         enabled: enabled,
