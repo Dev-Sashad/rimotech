@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:rimotech/constants/colors.dart';
-import 'package:rimotech/constants/size_config.dart';
 import 'package:rimotech/screens/home/homepageViewModel.dart';
 import 'package:rimotech/util/helpers/helpers.dart';
 import 'package:rimotech/widgets/grid_button.dart';
@@ -93,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                       carouselController: _controller,
                       options: CarouselOptions(
                           autoPlay: false,
-                          //enlargeCenterPage: true,
+                          viewportFraction: 1.0,
                           aspectRatio: 2.5,
                           scrollDirection: Axis.horizontal,
                           onPageChanged: (index, reason) {
@@ -125,14 +124,14 @@ class _HomePageState extends State<HomePage> {
                             color: Colors.black)),
                     customYMargin(20),
                     Container(
-                      margin: EdgeInsets.only(left: 20, right: 20),
+                      // margin: EdgeInsets.only(left: 10, right: 10),
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         child: GridView.count(
                           crossAxisCount: 2,
-                          mainAxisSpacing: 15,
-                          crossAxisSpacing: 10,
-                          childAspectRatio: 1,
+                          mainAxisSpacing: 20,
+                          crossAxisSpacing: 20,
+                          childAspectRatio: 1.5,
                           shrinkWrap: true,
                           children: List<Widget>.generate(4, (index) {
                             return GridButton(data: model.gridList[index]);
@@ -147,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                         Text('Recent Transactions',
                             style: TextStyle(
                                 fontSize: 14,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.bold,
                                 color: Colors.black)),
                         TextButton(
                           onPressed: () {},

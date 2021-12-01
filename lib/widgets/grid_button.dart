@@ -16,8 +16,8 @@ class GridButton extends StatelessWidget {
       },
       child: Container(
         height: 100,
-        width: kwidth(40, context),
-        padding: EdgeInsets.only(left: 14, top: 10, bottom: 10, right: 14),
+        width: kwidth(45, context),
+        padding: EdgeInsets.only(left: 14, top: 10, bottom: 20, right: 14),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: AppColors.gridButtonColor,

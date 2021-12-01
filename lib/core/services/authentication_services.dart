@@ -1,9 +1,9 @@
 import 'package:rimotech/core/models/error_model.dart';
+import 'package:rimotech/core/models/failed_attempts_model.dart';
 import 'package:rimotech/core/models/login.dart';
 import 'package:rimotech/core/models/success_model.dart';
 import 'package:rimotech/util/helpers/helpers.dart';
 import 'package:rimotech/util/http/paths.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'index.dart';
 
@@ -13,7 +13,8 @@ class AuthenticationService {
       final result = await http.post(Paths.sign_in, payload.toJson());
       if (result is ErrorModel) {
         print("ERROR::: ${result.error}");
-        return ErrorModel(result.error);
+        Failed failed = Failed.fromJson(result.error);
+        return ErrorModel(failed);
       } else {
         print("RESULT::: ${result.data}");
         // SharedPreferences prefs;

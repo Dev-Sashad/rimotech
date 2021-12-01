@@ -25,16 +25,6 @@ class TransactionCard extends StatelessWidget {
                       height: 60,
                       width: 60,
                       decoration: BoxDecoration(
-                          //   borderRadius: BorderRadius.circular(40),
-                          //shape: BoxShape.circle,
-                          image: DecorationImage(
-                              image:
-                                  AssetImage('assets/images/chidi_obi.png'))),
-                    )
-                  : Container(
-                      height: 60,
-                      width: 60,
-                      decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(40),
                           //   shape: BoxShape.circle,
                           color: Colors.grey[100]),
@@ -42,6 +32,17 @@ class TransactionCard extends StatelessWidget {
                         'assets/images/bank_icon.svg',
                         fit: BoxFit.scaleDown,
                       ),
+                    )
+                  : Container(
+                      height: 60,
+                      width: 60,
+                      decoration: BoxDecoration(
+                          //   borderRadius: BorderRadius.circular(40),
+                          //shape: BoxShape.circle,
+                          image: DecorationImage(
+                              fit: BoxFit.contain,
+                              image:
+                                  AssetImage('assets/images/chidi_obi.png'))),
                     ),
               customXMargin(20),
               Column(

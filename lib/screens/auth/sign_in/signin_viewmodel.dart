@@ -28,13 +28,9 @@ class SignInViewModel extends BaseModel {
         var result = await _authenticationService.login(login);
         if (result is ErrorModel) {
           setBusy(false);
-          //showErrorToast(result.error);
-          print("Error Werey!!!! ${result.error}");
           notifyListeners();
           showFlushBar(
-              title: 'Error',
-              message: "There was an error signing in.. try again",
-              context: context);
+              title: 'Error', message: 'invalid credentials', context: context);
           return ErrorModel(result.error);
         }
         if (result is SuccessModel) {
@@ -48,7 +44,7 @@ class SignInViewModel extends BaseModel {
       print(e);
       showFlushBar(
           title: 'Error',
-          message: "There was an error signing in 0000.. try again",
+          message: "There was an error signing in .. try again",
           context: context);
     }
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:rimotech/constants/colors.dart';
 import 'package:rimotech/constants/size_config.dart';
 import 'package:rimotech/core/models/login.dart';
@@ -23,6 +24,11 @@ class _SignInViewState extends State<SignInView> {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+        statusBarColor: AppColors.primaryColor,
+        statusBarBrightness: Brightness.dark,
+        statusBarIconBrightness: Brightness.dark));
+
     return ViewModelBuilder<SignInViewModel>.reactive(
       viewModelBuilder: () => SignInViewModel(),
       builder: (context, model, child) => WillPopScope(
@@ -54,7 +60,8 @@ class _SignInViewState extends State<SignInView> {
                               decoration: BoxDecoration(
                                   color: AppColors.white,
                                   shape: BoxShape.circle),
-                              child: Icon(Icons.arrow_back_ios, size: 15),
+                              child:
+                                  Icon(Icons.arrow_back_ios_outlined, size: 15),
                             ),
                           )),
                       Positioned(
@@ -94,9 +101,7 @@ class _SignInViewState extends State<SignInView> {
                         margin: EdgeInsets.only(
                           top: kheight(40, context),
                         ),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 20,
-                        ),
+                        padding: EdgeInsets.only(left: 20, right: 20, top: 20),
                         decoration: BoxDecoration(
                             color: AppColors.white,
                             borderRadius: BorderRadius.only(
@@ -110,7 +115,6 @@ class _SignInViewState extends State<SignInView> {
                           child: ListView(
                             physics: BouncingScrollPhysics(),
                             children: [
-                              customYMargin(20),
                               CustomTextFormField(
                                 label: "Email",
                                 textInputType: TextInputType.name,
@@ -136,8 +140,9 @@ class _SignInViewState extends State<SignInView> {
                                   if (_isValidated) {
                                     model.signIn(
                                         Login(
-                                            email: emailController.text,
-                                            password: passwordController.text),
+                                            email: emailController.text.trim(),
+                                            password:
+                                                passwordController.text.trim()),
                                         context);
                                     FocusScope.of(context).unfocus();
                                     _key.currentState.build(context);
@@ -184,6 +189,7 @@ class _SignInViewState extends State<SignInView> {
                                   ),
                                 ],
                               ),
+                              customYMargin(kheight(10, context)),
                             ],
                           ),
                         ),

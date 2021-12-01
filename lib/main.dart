@@ -5,16 +5,11 @@ import 'package:rimotech/util/locator.dart';
 import 'package:rimotech/util/progressBarManager/progressManager.dart';
 import 'package:rimotech/util/progressBarManager/progressService.dart';
 import 'package:rimotech/util/router.dart';
-
 import 'constants/colors.dart';
 import 'core/services/navigation_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: AppColors.primaryColor,
-      statusBarBrightness: Brightness.dark,
-      statusBarIconBrightness: Brightness.dark));
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   setupLocator();
@@ -42,7 +37,6 @@ class _MyAppState extends State<MyApp> {
         onGenerateRoute: (settings) => MaterialPageRoute(
           builder: (context) {
             return ProgressManager(child: child);
-            //DialogManager(child: child);
           },
         ),
       ),

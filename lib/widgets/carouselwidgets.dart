@@ -16,10 +16,10 @@ class _CarouselWidgetState extends State<CarouselWidget> {
   Widget build(BuildContext context) {
     return Container(
       height: kheight(20, context),
-      width: kwidth(70, context),
+      width: kwidth(90, context),
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
-          color: AppColors.primaryColor,
+          color: AppColors.couroselColor,
           borderRadius: BorderRadius.circular(10)),
       child: Stack(
         children: [
@@ -37,7 +37,11 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                     });
                   }
                 },
-                icon: Icon(isvisible ? Icons.visibility_off : Icons.visibility),
+                icon: Icon(
+                  isvisible ? Icons.visibility_off : Icons.visibility,
+                  size: 20,
+                  color: AppColors.white,
+                ),
               )),
           Container(
             margin: EdgeInsets.only(top: 30),
@@ -51,31 +55,31 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                           fontWeight: FontWeight.w500,
                           fontSize: 14)),
                   customYMargin(10),
-                  isvisible
-                      ? Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('NGN',
-                                style: TextStyle(
-                                    color: Colors.white10,
-                                    fontWeight: FontWeight.w600,
-                                    fontSize: 22)),
-                            customXMargin(5),
-                            Text(
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('NGN',
+                          style: TextStyle(
+                              color: Colors.white24,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 22)),
+                      customXMargin(5),
+                      isvisible
+                          ? Text(
                               '200,000',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 22),
-                            ),
-                          ],
-                        )
-                      : Text('********',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 15)),
-                  customYMargin(10),
+                            )
+                          : Text('*****',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 15)),
+                    ],
+                  ),
+                  customYMargin(20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -105,9 +109,9 @@ class CarouselBlankWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: kheight(20, context),
-      width: kwidth(70, context),
+      width: kwidth(90, context),
       decoration: BoxDecoration(
-          color: AppColors.primaryColor,
+          color: AppColors.couroselColor,
           borderRadius: BorderRadius.circular(10)),
     );
   }

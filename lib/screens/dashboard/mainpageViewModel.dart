@@ -29,7 +29,7 @@ class MainHomepageViewModel extends BaseModel {
     NavigationItem(title: '', icon: 'assets/images/center_icon.svg'),
     NavigationItem(
         title: 'Settle card', icon: 'assets/images/settle_card_icon.svg'),
-    NavigationItem(title: 'Settle card', icon: 'assets/images/menu_icon.svg'),
+    NavigationItem(title: 'More', icon: 'assets/images/menu_icon.svg'),
   ];
 }
 

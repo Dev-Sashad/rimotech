@@ -29,12 +29,16 @@ class _MainHomepageState extends State<MainHomepage> {
                   resizeToAvoidBottomInset: false,
                   body: model.screens[model.mainPageIndex],
                   bottomNavigationBar: BottomNavigationBar(
-                    type: BottomNavigationBarType.fixed,
+                    elevation: 0.0,
+                    type: BottomNavigationBarType.shifting,
                     selectedItemColor: AppColors.primaryColor,
                     unselectedItemColor: AppColors.black,
-                    selectedFontSize: 14,
-                    unselectedFontSize: 11,
-                    //iconSize: 25,
+                    unselectedLabelStyle:
+                        TextStyle(fontSize: 10, color: AppColors.grey),
+                    selectedLabelStyle:
+                        TextStyle(fontSize: 13, color: AppColors.primaryColor),
+                    selectedFontSize: 13,
+                    unselectedFontSize: 10,
                     currentIndex: model.mainPageIndex,
                     backgroundColor: Colors.white,
                     onTap: (value) {
@@ -45,11 +49,17 @@ class _MainHomepageState extends State<MainHomepage> {
                         label: model.items.elementAt(0).title,
                         icon: SvgPicture.asset(
                           model.items.elementAt(0).icon,
+                          color: model.mainPageIndex == 0
+                              ? AppColors.primaryColor
+                              : Colors.grey[400],
                         ),
                       ),
                       BottomNavigationBarItem(
                         icon: SvgPicture.asset(
                           model.items.elementAt(1).icon,
+                          color: model.mainPageIndex == 1
+                              ? AppColors.primaryColor
+                              : Colors.grey[400],
                         ),
                         label: model.items.elementAt(1).title,
                       ),
@@ -62,12 +72,18 @@ class _MainHomepageState extends State<MainHomepage> {
                       BottomNavigationBarItem(
                         icon: SvgPicture.asset(
                           model.items.elementAt(3).icon,
+                          color: model.mainPageIndex == 3
+                              ? AppColors.primaryColor
+                              : Colors.grey[400],
                         ),
                         label: model.items.elementAt(3).title,
                       ),
                       BottomNavigationBarItem(
                         icon: SvgPicture.asset(
                           model.items.elementAt(4).icon,
+                          color: model.mainPageIndex == 4
+                              ? AppColors.primaryColor
+                              : Colors.grey[400],
                         ),
                         label: model.items.elementAt(4).title,
                       ),

@@ -39,13 +39,13 @@ Future<bool> checkInternet() async {
 
 showFlushBar({String title = '', String message, BuildContext context}) {
   Flushbar(
-    backgroundColor: AppColors.primaryColor,
-    titleColor: Colors.white,
+    backgroundColor: AppColors.grey,
+    titleColor: AppColors.primaryColor,
     title: title,
     flushbarPosition: FlushbarPosition.TOP,
-    messageColor: Colors.white,
+    messageColor: AppColors.primaryColor,
     message: message,
-    duration: Duration(seconds: 5),
+    duration: Duration(seconds: 3),
   ).show(context);
 }
 
